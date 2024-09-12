@@ -4,10 +4,13 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 
 export default function Home() {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  console.log(API_URL)
   const [category, setCategory] = useState([]);
   const { register, handleSubmit } = useForm();
+
   async function fetchCategory() {
-    const data = await fetch("http://localhost:3000/api/category");
+    const data = await fetch(`${API_URL}/category`)
     const c = await data.json();
     setCategory(c);
   }
@@ -17,7 +20,7 @@ export default function Home() {
   }, []);
 
   function createCategory(data) {
-    fetch("http://localhost:3000/api/category", {
+    fetch(`${API_URL}/category`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

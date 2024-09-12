@@ -15,10 +15,11 @@ import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 export default function Home() {
   const [category, setCategory] = useState([]);
   const { register, handleSubmit } = useForm();
-  const API_BASE = process.env.NEXT_PUBLIC_API_BASE
-  console.log(`${API_BASE}/category`)
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  console.log(`${API_URL}/category`);
   async function fetchCategory() {
-    const data = await fetch(`${API_BASE}/category`);
+    const data = await fetch(`${API_URL}/category`);
     const c = await data.json();
     setCategory(c);
   }
@@ -28,7 +29,7 @@ export default function Home() {
   }, []);
 
   function createCategory(data) {
-    fetch(`${API_BASE}/category`, {
+    fetch(`${API_URL}/category`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
