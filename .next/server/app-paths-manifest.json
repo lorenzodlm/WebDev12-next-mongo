@@ -1,9 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/product/page": "app/product/page.js",
   "/api/category/route": "app/api/category/route.js",
   "/api/product/route": "app/api/product/route.js",
-  "/category/page": "app/category/page.js",
-  "/api/product/[id]/route": "app/api/product/[id]/route.js"
+  "/product/page": "app/product/page.js",
+  "/page": "app/page.js"
 }
